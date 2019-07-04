@@ -3,6 +3,7 @@ package com.yest;
 import java.util.Random;
 
 public class RandomPasswd {
+
   public static void main(String[] args) {
 
     String password0 = getRandomPassword(32);
@@ -14,7 +15,7 @@ public class RandomPasswd {
     String password3 = getRandomPassword(32);
     System.out.println(password3);
 
-    Long a =  2112478106L ^ 205654450136L;
+    Long a = 2112478106L ^ 205654450136L;
     Long b = 2112478106L ^ 105654450135L;
     System.out.println(a);
     System.out.println(b);
@@ -24,9 +25,10 @@ public class RandomPasswd {
   public static String getRandomPassword(int len) {
     String result = null;
 
-    while(len>=6){
+    while (len >= 6) {
       result = makeRandomPassword(len);
-      if (result.matches(".*[a-z]{1,}.*") && result.matches(".*[A-Z]{1,}.*") && result.matches(".*\\d{1,}.*") && result.matches(".*[~!@#$%^&*\\.?]{1,}.*")) {
+      if (result.matches(".*[a-z]{1,}.*") && result.matches(".*[A-Z]{1,}.*") && result
+          .matches(".*\\d{1,}.*") && result.matches(".*[~!@#$%^&*\\.?]{1,}.*")) {
         return result;
       }
       result = makeRandomPassword(len);
@@ -35,8 +37,9 @@ public class RandomPasswd {
   }
 
   //随机密码生成
-  public static String makeRandomPassword(int len){
-    char charr[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*.?".toCharArray();
+  public static String makeRandomPassword(int len) {
+    char charr[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~!@#$%^&*.?"
+        .toCharArray();
     //System.out.println("字符数组长度:" + charr.length); //可以看到调用此方法多少次
     StringBuilder sb = new StringBuilder();
     Random r = new Random();
